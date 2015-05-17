@@ -1,0 +1,14 @@
+
+nav {
+    background-color: #ed1a44;
+}
+
+nav .brand-logo {
+    background-image: url("img/logo-name.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: 12px;
+    height: 64px;
+    min-width: 100px;
+    width: 150px;
+}
