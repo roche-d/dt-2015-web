@@ -38,6 +38,7 @@
                 <th>Date</th>
                 <th>C. Car</th>
                 <th>Location</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -49,9 +50,47 @@
                 <td>{{req.when}}</td>
                 <td>{{req.ccar}}</td>
                 <td>{{req.where}}</td>
+                <td ng-click="answerRequest(req)"><i class="mdi-communication-chat"></i></td>
             </tr>
             </tbody>
         </table>
+
+        <div id="answerModal" class="modal">
+            <div class="modal-content">
+                <h4>Make an offer</h4>
+                <p>You can send each client only one offer, the more detailed, the more likely to be chosen !</p>
+
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input placeholder="Placeholder" id="quote" type="number" class="validate" ng-model="msg.price">
+                                <label for="quote">Price Estimate</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <label for="repairdate">Date you can take the car</label>
+                                <input id="repairdate" type="date" class="datepicker" ng-model="msg.date">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <textarea id="garage-msg" class="materialize-textarea" ng-model="msg.text"></textarea>
+                                        <label for="garage-msg">Message for the client</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+                <a href="#!" ng-click="sendAnswerRequest(selectedId)" class=" modal-action waves-effect waves-green btn-flat">Send</a>
+            </div>
+        </div>
     </div>
 </main>
 
