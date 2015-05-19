@@ -63,7 +63,10 @@
                             data: {
                                 price: msg.offerPrice,
                                 msg: msg.offerText,
-                                date: msg.offerDate
+                                date: msg.offerDate,
+                                garage: 'Georges',
+                                tel: '01 23 54 23 33',
+                                rating: 3
                             }
                         }
                     }).success(function (data) {
